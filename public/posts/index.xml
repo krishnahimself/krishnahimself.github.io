@@ -6,14 +6,14 @@
     <description>Recent content in Posts on Krishna Bhandari</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Mar 2024 17:21:27 +0545</lastBuildDate>
+    <lastBuildDate>Sun, 21 Aug 2022 17:21:27 +0545</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
-      <pubDate>Mon, 11 Mar 2024 17:21:27 +0545</pubDate>
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description></description>
+      <title>How to use Vue 3 template refs</title>
+      <link>http://localhost:1313/posts/how-to-use-vue-3-template-refs/</link>
+      <pubDate>Sun, 21 Aug 2022 17:21:27 +0545</pubDate>
+      <guid>http://localhost:1313/posts/how-to-use-vue-3-template-refs/</guid>
+      <description>After working with Vue 2 refs and switching to Vue 3 refs can be tricky for the first time as we do not have access to this.$refs in Vue3&#xA;Problem: Recently, I was working on Vue 3 project and using VeeValidate for client-side form validation. I was also using the bootstrap modal for the form. Now, I need to reset the form when someone clicks on add/edit button. There is resetForm method available on the VeeValidate Form component so we need to get the form and call resetForm method.</description>
     </item>
   </channel>
 </rss>

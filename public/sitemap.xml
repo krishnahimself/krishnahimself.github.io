@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2024-03-11T17:21:27+05:45</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/my-first-post/</loc>
-    <lastmod>2024-03-11T17:21:27+05:45</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2024-03-11T17:21:27+05:45</lastmod>
-  </url><url>
     <loc>http://localhost:1313/about/</loc>
     <lastmod>2024-03-11T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-03-11T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/how-to-use-vue-3-template-refs/</loc>
+    <lastmod>2022-08-21T17:21:27+05:45</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2022-08-21T17:21:27+05:45</lastmod>
   </url><url>
     <loc>http://localhost:1313/contact/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
