@@ -15,5 +15,12 @@
       <guid>http://localhost:1313/posts/my-first-post/</guid>
       <description></description>
     </item>
+    <item>
+      <title>About Me</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 11 Mar 2024 10:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>About Me Welcome to my website! Here, I share my thoughts on various topics ranging from PHP, Laravel, Vue.js, Livewire, Inertia, React and the technology around. Feel free to explore and reach out to me if you have any questions or suggestions.</description>
+    </item>
   </channel>
 </rss>
