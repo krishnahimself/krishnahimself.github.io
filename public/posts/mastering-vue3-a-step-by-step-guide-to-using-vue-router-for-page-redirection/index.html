@@ -54,7 +54,7 @@
   />
 
   
-  <title>Categories - Krishna Bhandari</title>
+  <title>Mastering Vue3: A Step-by-Step Guide to Using vue-router for Page Redirection - Krishna Bhandari</title>
 
   
   <meta name="theme-color" />
@@ -63,11 +63,10 @@
   
   
   
-  
-  <meta
-    name="description"
-    content="A personal blog"
-  />
+  <meta name="description" content="First of all we need to import the function called useRouter from the vue-router plugin
+import { useRouter} from &#39;vue-router&#39;; The useRouter function provides us with a convenient way to access the Vue router instance and perform redirects to different pages. Let&rsquo;s assign the result of useRouter function to the constant called router
+const router = useRouter(); Finally, we can use this router to navigate between pages. Example:
+const handleSubmit = () =&gt; { axios." />
   <meta name="author" content="Krishna Bhandari" />
   
 
@@ -107,6 +106,12 @@
   
 
   
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
   
 
   
@@ -269,18 +274,91 @@
     >
       
 
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Mastering Vue3: A Step-by-Step Guide to Using vue-router for Page Redirection</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Feb 25, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p>First of all we need to import the function called <code>useRouter</code> from the <code>vue-router</code> plugin</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useRouter</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-router&#39;</span>;
+</span></span></code></pre></div><p>The <code>useRouter</code> function provides us with a convenient way to access the Vue router instance and perform redirects to different pages. Let&rsquo;s assign the result of <code>useRouter</code> function to the constant called <code>router</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRouter</span>();
+</span></span></code></pre></div><p>Finally, we can use this <code>router</code> to navigate between pages. Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleSubmit</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;/api/appointments/create&#39;</span>, <span style="color:#a6e22e">form</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">response</span>) =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#39;/admin/appointments&#39;</span>);
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div></section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/posts/sometime-we-overcomplicate-things/"
+      ><span class="mr-1.5">←</span><span>Sometimes we overcomplicate things</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/posts/how-to-use-vue-3-template-refs/"
+      ><span>How to use Vue 3 template refs</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
 
 
-
-
-
-
-
-
- 
-
-
-
+  
+  <div class="giscus mt-24"></div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="YOUR_GISCUS_REPO"
+    data-repo-id="YOUR_GISCUS_REPO_ID"
+    data-category="YOUR__GISCUS_CATEGORY"
+    data-category-id="YOUR_GISCUS_CATEGORY_ID"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="0"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+  ></script>
+  
+</article>
 
 
     </main>

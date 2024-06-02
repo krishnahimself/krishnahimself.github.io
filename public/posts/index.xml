@@ -4,10 +4,24 @@
     <title>Posts on Krishna Bhandari</title>
     <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Krishna Bhandari</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Aug 2022 17:21:27 +0545</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jun 2024 17:21:27 +0545</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sometimes we overcomplicate things</title>
+      <link>http://localhost:1313/posts/sometime-we-overcomplicate-things/</link>
+      <pubDate>Sat, 01 Jun 2024 17:21:27 +0545</pubDate>
+      <guid>http://localhost:1313/posts/sometime-we-overcomplicate-things/</guid>
+      <description>How I overthink something and made the complex implementation and later realized that we can handle it in a better and simpler way. I was dealing with the form using Vue 3 and that form needs to be repeated once we click the add new button. First, I thought of creating a parent component called Question and inside that, it will consist of a QuestionItem component which we can use to loop for the repeater.</description>
+    </item>
+    <item>
+      <title>Mastering Vue3: A Step-by-Step Guide to Using vue-router for Page Redirection</title>
+      <link>http://localhost:1313/posts/mastering-vue3-a-step-by-step-guide-to-using-vue-router-for-page-redirection/</link>
+      <pubDate>Sat, 25 Feb 2023 17:21:27 +0545</pubDate>
+      <guid>http://localhost:1313/posts/mastering-vue3-a-step-by-step-guide-to-using-vue-router-for-page-redirection/</guid>
+      <description>First of all we need to import the function called useRouter from the vue-router plugin&#xA;import { useRouter} from &amp;#39;vue-router&amp;#39;; The useRouter function provides us with a convenient way to access the Vue router instance and perform redirects to different pages. Let&amp;rsquo;s assign the result of useRouter function to the constant called router&#xA;const router = useRouter(); Finally, we can use this router to navigate between pages. Example:&#xA;const handleSubmit = () =&amp;gt; { axios.</description>
+    </item>
     <item>
       <title>How to use Vue 3 template refs</title>
       <link>http://localhost:1313/posts/how-to-use-vue-3-template-refs/</link>
