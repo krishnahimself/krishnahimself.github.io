@@ -54,7 +54,7 @@
   />
 
   
-  <title>404 Page not found - Krishna Bhandari</title>
+  <title>How to use Spatie Laravel View Model with Inertia JS - Krishna Bhandari</title>
 
   
   <meta name="theme-color" />
@@ -63,11 +63,8 @@
   
   
   
-  
-  <meta
-    name="description"
-    content="A personal blog"
-  />
+  <meta name="description" content="After working with Vue 2 refs and switching to Vue 3 refs can be tricky for the first time as we do not have access to this.$refs in Vue3
+Problem: Recently, I was working on Vue 3 project and using VeeValidate for client-side form validation. I was also using the bootstrap modal for the form. Now, I need to reset the form when someone clicks on add/edit button. There is resetForm method available on the VeeValidate Form component so we need to get the form and call resetForm method." />
   <meta name="author" content="Krishna Bhandari" />
   
 
@@ -107,6 +104,12 @@
   
 
   
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
   
 
   
@@ -268,11 +271,96 @@
       class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
     >
       
-<h1
-  class="absolute inset-x-8 bottom-20 top-0 flex items-center justify-center text-9xl"
->
-  404
-</h1>
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">How to use Spatie Laravel View Model with Inertia JS</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Jul 28, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p>After working with Vue 2 refs and switching to Vue 3 refs can be tricky for the first time as we do not have access to <code>this.$refs</code> in Vue3</p>
+<h3 id="problem">Problem:</h3>
+<p>Recently, I was working on Vue 3 project and using VeeValidate for client-side form validation. I was also using the bootstrap modal for the form. Now, I need to reset the form when someone clicks on add/edit button. There is resetForm method available on the VeeValidate Form component so we need to get the form and call resetForm method.</p>
+<p>With Vue 2 we can do the following things:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#75715e">// In template
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">Form</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span>&gt;...&lt;/<span style="color:#f92672">Form</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// In code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$refs</span>.<span style="color:#a6e22e">form</span>.<span style="color:#a6e22e">resetForm</span>();
+</span></span></code></pre></div><p>But this thing will not work with Vue 3 as we do not have access to this.$refs inside our script so we need to follow a different approach.</p>
+<h3 id="solution">Solution:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">ref</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Make sure to declare the variable name as template ref value.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">form</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ref</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// reset form while calling create user method.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">createUser</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">form</span>.<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">resetForm</span>();
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// In template
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">Form</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span>&gt;....&lt;/<span style="color:#f92672">Form</span>&gt;
+</span></span></code></pre></div><p><em>Note: To obtain the reference with Composition API, we need to declare a ref with the same name</em></p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/posts/sometime-we-overcomplicate-things/"
+      ><span>Sometimes we overcomplicate things</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <div class="giscus mt-24"></div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="YOUR_GISCUS_REPO"
+    data-repo-id="YOUR_GISCUS_REPO_ID"
+    data-category="YOUR__GISCUS_CATEGORY"
+    data-category-id="YOUR_GISCUS_CATEGORY_ID"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="0"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+  ></script>
+  
+</article>
+
 
     </main>
 

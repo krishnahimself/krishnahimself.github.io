@@ -120,7 +120,7 @@
   <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.126.2">
+  <meta name="generator" content="Hugo 0.129.0">
 
   
   
@@ -311,13 +311,13 @@
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">main</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">QuestionItem</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">v-for</span><span style="color:#e6db74">=&#34;(question, index) in questions&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      :modelValue=&#34;question&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      @update:modelValue=&#34;updateQuestion(index, $event)&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    /&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;button @click.prevent=&#34;addQuestion&#34;&gt;Add Question&lt;/button&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;button @click.prevent=&#34;handleSubmit&#34;</span>&gt;<span style="color:#a6e22e">Submit</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;(question, index) in questions&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">:modelValue</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;question&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">update</span><span style="color:#f92672">:</span><span style="color:#a6e22e">modelValue</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;updateQuestion(index, $event)&#34;</span>
+</span></span><span style="display:flex;"><span>    /&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">button</span> <span style="color:#f92672">@click.prevent</span><span style="color:#e6db74">=&#34;addQuestion&#34;</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Question</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">button</span> <span style="color:#f92672">@click.prevent</span><span style="color:#e6db74">=&#34;handleSubmit&#34;</span>&gt;<span style="color:#a6e22e">Submit</span>&lt;/<span style="color:#f92672">button</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">main</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
 </span></span></code></pre></div><p>Here, I am creating a <code>questions</code> property to store all the questions. <code>addQuestion</code> will show a new form as a row, and <code>updateQuestion</code> will apply the changes that are made on the child component called <code>QuestionItem</code>. Here is the code inside the <code>QuestionItem</code> file.</p>
@@ -345,8 +345,8 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h3</span>&gt;<span style="color:#a6e22e">Question</span>&lt;/<span style="color:#f92672">h3</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">v</span><span style="color:#f92672">-model</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">question</span><span style="color:#960050;background-color:#1e0010">&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">v</span><span style="color:#f92672">-model</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">type</span><span style="color:#960050;background-color:#1e0010">&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#f92672">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;question&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#f92672">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;type&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
 </span></span></code></pre></div><p>Now, this was working as expected. We can add multiple questions with their types and once we click the submit button, we will have all the questions that are entered. But, wait! I was not happy with this implementation and later realized that we can make this very simple.</p>
 <p>&mdash; Simple &amp; Better Approach</p>
@@ -383,13 +383,13 @@
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#f92672">v-for</span><span style="color:#e6db74">=&#34;(question, index) in questions&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;h3&gt;Question&lt;/h3&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;input type=&#34;text&#34; v-model=&#34;question.text&#34; /&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;input type=&#34;text&#34; v-model=&#34;question.type&#34; /&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/div&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;button @click.prevent=&#34;addQuestion&#34;&gt;Add Question&lt;/button&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;button @click.prevent=&#34;handleSubmit&#34;</span>&gt;<span style="color:#a6e22e">Submit</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#f92672">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;(question, index) in questions&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h3</span>&gt;<span style="color:#a6e22e">Question</span>&lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#f92672">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;question.text&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#f92672">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;question.type&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">button</span> <span style="color:#f92672">@click.prevent</span><span style="color:#e6db74">=&#34;addQuestion&#34;</span>&gt;<span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">Question</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">button</span> <span style="color:#f92672">@click.prevent</span><span style="color:#e6db74">=&#34;handleSubmit&#34;</span>&gt;<span style="color:#a6e22e">Submit</span>&lt;/<span style="color:#f92672">button</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
 </span></span></code></pre></div><p>Here, we are not introducing anything like watchers, props, and emitted events. We are just integrating that question repeater part inside the QuestionForm component itself. And, this is also working as expected, which is a much simpler and easier implementation than the previous one. By just rethinking, questioning our own implementation, and looking at things differently, we can come up with better solutions. I hope you enjoyed this article. Thank you for reading to the end :)</p>
 </section>
@@ -402,6 +402,12 @@
   
   
   <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/posts/how-to-use-spatie-laravel-view-models-with-inertia-js-and-vue3/"
+      ><span class="mr-1.5">←</span><span>How to use Spatie Laravel View Models with Inertia JS and Vue 3</span></a
+    >
     
     
     <a
