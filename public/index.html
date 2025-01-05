@@ -40,10 +40,15 @@
 
 
 
+
+
+
+
 <html
   class="not-ready lg:text-base"
   style="--bg: #faf8f1"
   lang="en-us"
+  dir="ltr"
 >
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
@@ -114,11 +119,17 @@
   
 
   
-  <link rel="icon" href="http://localhost:1313/favicon.ico" />
-  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
 
   
-  <meta name="generator" content="Hugo 0.129.0">
+  <meta name="generator" content="Hugo 0.140.2">
 
   
   
@@ -126,22 +137,20 @@
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white">
-    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
-  <div class="relative z-50 mr-auto flex items-center">
-    <a
-      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
-      href="http://localhost:1313/"
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
       >Krishna Bhandari</a
     >
     <div
-      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
       role="button"
       aria-label="Dark"
     ></div>
   </div>
 
   <div
-    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
     role="button"
     aria-label="Menu"
   ></div>
@@ -196,16 +205,16 @@
   >
     
     
-    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
       
       <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
         href="/about/"
         >About</a
       >
       
       <a
-        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
         href="/contact/"
         >Contact</a
       >
@@ -215,11 +224,11 @@
 
     
     <nav
-      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+      class="mt-12 flex justify-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
     >
       
       <a
-        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
         style="--url: url(./twitter.svg)"
         href="https://twitter.com/krishna8723"
         target="_blank"
@@ -229,7 +238,7 @@
       </a>
       
       <a
-        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
         style="--url: url(./github.svg)"
         href="https://github.com/krishnahimself"
         target="_blank"
@@ -239,7 +248,7 @@
       </a>
       
       <a
-        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
         style="--url: url(./instagram.svg)"
         href="https://instagram.com/YOUR_INSTAGRAM_ID"
         target="_blank"
@@ -249,7 +258,7 @@
       </a>
       
       <a
-        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
         style="--url: url(./linkedin.svg)"
         href="https://linkedin.com/in/YOUR_LINKEDIN_ID"
         target="_blank"
@@ -265,7 +274,7 @@
 
 
     <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
     >
       
 
@@ -286,13 +295,13 @@
 
 
 
-<div class="-mt-2 mb-16 flex items-center">
+<div class="-mt-2 mb-12 flex items-center">
   
   <div
-    class="mr-5 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-3 shadow dark:bg-white/[15%]"
+    class="ltr:-ml-1 rtl:-mr-1 ltr:mr-5 rtl:ml-5 h-24 w-24 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-3 dark:!bg-white/90"
   >
     <img
-      class="my-0 aspect-square w-16 rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80"
+      class="my-0 h-full w-full rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80"
       src="https://avatars.githubusercontent.com/u/19906424?v=4"
       alt="Krishna Bhandari"
     />
@@ -300,7 +309,9 @@
   
   
   <div>
-    <h1 class="mb-2 mt-3 text-[1.6rem] font-bold">Krishna Bhandari</h1>
+    <div class="mb-1 mt-3 text-2xl font-medium text-black dark:text-white">
+      Krishna Bhandari
+    </div>
     <div class="break-words">
       Senior Software Engineer
     </div>
@@ -313,8 +324,8 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">How to use Spatie Laravel View Models with Inertia JS and Vue 3</h2>
-  <time class="text-sm antialiased opacity-60"
+  <h2 class="!my-0">How to use Spatie Laravel View Models with Inertia JS and Vue 3</h2>
+  <time class="text-xs antialiased opacity-60"
     >Jul 28, 2024</time
   >
   <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/how-to-use-spatie-laravel-view-models-with-inertia-js-and-vue3/">How to use Spatie Laravel View Models with Inertia JS and Vue 3</a>
@@ -326,8 +337,8 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Sometimes we overcomplicate things</h2>
-  <time class="text-sm antialiased opacity-60"
+  <h2 class="!my-0">Sometimes we overcomplicate things</h2>
+  <time class="text-xs antialiased opacity-60"
     >Jun 1, 2024</time
   >
   <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/sometime-we-overcomplicate-things/">Sometimes we overcomplicate things</a>
@@ -339,8 +350,8 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Mastering Vue3: A Step-by-Step Guide to Using vue-router for Page Redirection</h2>
-  <time class="text-sm antialiased opacity-60"
+  <h2 class="!my-0">Mastering Vue3: A Step-by-Step Guide to Using vue-router for Page Redirection</h2>
+  <time class="text-xs antialiased opacity-60"
     >Feb 25, 2023</time
   >
   <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/mastering-vue3-a-step-by-step-guide-to-using-vue-router-for-page-redirection/">Mastering Vue3: A Step-by-Step Guide to Using vue-router for Page Redirection</a>
@@ -352,8 +363,8 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">How to use Vue 3 template refs</h2>
-  <time class="text-sm antialiased opacity-60"
+  <h2 class="!my-0">How to use Vue 3 template refs</h2>
+  <time class="text-xs antialiased opacity-60"
     >Aug 21, 2022</time
   >
   <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/how-to-use-vue-3-template-refs/">How to use Vue 3 template refs</a>
@@ -367,14 +378,24 @@
     </main>
 
     <footer
-  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
 >
   <div class="mr-auto">
-    &copy; 2024
+  
+    &copy; 2025
     <a class="link" href="http://localhost:1313/">Krishna Bhandari</a>
+  
   </div>
-  
-  
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
 </footer>
 
   </body>
