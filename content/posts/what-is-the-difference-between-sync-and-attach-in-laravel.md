@@ -26,7 +26,10 @@ If the user already has roles (e.g., 1), those relationships will remain untouch
 `sync()` method in laravel synchronizes the pivot table by adding the specified relationships and removing any that are not in the list. It overwrites the existing relationships in the pivot table. This is used when we want to replace the current relationships with a new set of data.
 
 ```php
+use App\Models\User;
+
 $user = User::find(1);
+
 $user->roles()->sync([2, 3]);
 ```
 
