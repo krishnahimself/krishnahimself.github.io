@@ -16,6 +16,13 @@
       <description>&lt;p&gt;View models are a useful concept for passing data to the view. They help clean up the code and allow us to reuse similar data, usually in our create and update forms.&lt;/p&gt;&#xA;&lt;h3 id=&#34;problem&#34;&gt;Problem:&lt;/h3&gt;&#xA;&lt;p&gt;Recently, I was working on a VILT (Vue, Inertia, Laravel &amp;amp; Tailwind) Stack project where there was a lot of data that needed to be passed to the view for the create form. Almost the same data needed to be passed to the update form as well, which caused duplication and made the controller look messy. To clean things up, I used Spatie Laravel View Models to pass data to the view, and I was using Inertia along with Vue for the frontend.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>How to use Spatie Laravel View Models with Inertia JS and Vue 3</title>
+      <link>http://localhost:1313/posts/what-is-the-difference-between-sync-and-attach-in-laravel/</link>
+      <pubDate>Sun, 28 Jul 2024 17:21:27 +0545</pubDate>
+      <guid>http://localhost:1313/posts/what-is-the-difference-between-sync-and-attach-in-laravel/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Sometimes we overcomplicate things</title>
       <link>http://localhost:1313/posts/sometime-we-overcomplicate-things/</link>
       <pubDate>Sat, 01 Jun 2024 17:21:27 +0545</pubDate>

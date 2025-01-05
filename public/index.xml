@@ -6,8 +6,15 @@
     <description>Recent content on Krishna Bhandari</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Jul 2024 17:21:27 +0545</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2025 17:21:27 +0545</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is the difference between attach and sync in laravel</title>
+      <link>http://localhost:1313/posts/what-is-the-difference-between-sync-and-attach-in-laravel/</link>
+      <pubDate>Sun, 05 Jan 2025 17:21:27 +0545</pubDate>
+      <guid>http://localhost:1313/posts/what-is-the-difference-between-sync-and-attach-in-laravel/</guid>
+      <description>&lt;p&gt;In Laravel, attach and sync are methods used for managing many-to-many relationships between models. While both are used to associate records in a pivot table, they serve different purposes. Here&amp;rsquo;s a detailed breakdown of the differences:&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-attach&#34;&gt;1. Attach&lt;/h3&gt;&#xA;&lt;p&gt;&lt;code&gt;attach()&lt;/code&gt; method is used to add new entries to the pivot table without removing any existing ones. When we want to add a new relationship without altering any existing ones then we can use the &lt;code&gt;attach()&lt;/code&gt; method.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>How to use Spatie Laravel View Models with Inertia JS and Vue 3</title>
       <link>http://localhost:1313/posts/how-to-use-spatie-laravel-view-models-with-inertia-js-and-vue3/</link>

@@ -59,7 +59,7 @@
   />
 
   
-  <title>Krishna Bhandari</title>
+  <title>What is the difference between attach and sync in laravel - Krishna Bhandari</title>
 
   
   <meta name="theme-color" />
@@ -68,11 +68,9 @@
   
   
   
-  
-  <meta
-    name="description"
-    content="A personal blog"
-  />
+  <meta name="description" content="In Laravel, attach and sync are methods used for managing many-to-many relationships between models. While both are used to associate records in a pivot table, they serve different purposes. Here&rsquo;s a detailed breakdown of the differences:
+1. Attach
+attach() method is used to add new entries to the pivot table without removing any existing ones. When we want to add a new relationship without altering any existing ones then we can use the attach() method." />
   <meta name="author" content="Krishna Bhandari" />
   
 
@@ -112,6 +110,12 @@
   
 
   
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
   
 
   
@@ -278,114 +282,93 @@
     >
       
 
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">What is the difference between attach and sync in laravel</h1>
 
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-<div class="-mt-2 mb-12 flex items-center">
-  
-  <div
-    class="ltr:-ml-1 rtl:-mr-1 ltr:mr-5 rtl:ml-5 h-24 w-24 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-3 dark:!bg-white/90"
-  >
-    <img
-      class="my-0 h-full w-full rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80"
-      src="https://avatars.githubusercontent.com/u/19906424?v=4"
-      alt="Krishna Bhandari"
-    />
-  </div>
-  
-  
-  <div>
-    <div class="mb-1 mt-3 text-2xl font-medium text-black dark:text-white">
-      Krishna Bhandari
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Jan 5, 2025</time>
+      
+      
+      
+      
     </div>
-    <div class="break-words">
-      Senior Software Engineer
-    </div>
-  </div>
-  
-</div>
+    
+  </header>
 
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
-  
-  <h2 class="!my-0">What is the difference between attach and sync in laravel</h2>
-  <time class="text-xs antialiased opacity-60"
-    >Jan 5, 2025</time
-  >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/what-is-the-difference-between-sync-and-attach-in-laravel/">What is the difference between attach and sync in laravel</a>
+  <section><p>In Laravel, attach and sync are methods used for managing many-to-many relationships between models. While both are used to associate records in a pivot table, they serve different purposes. Here&rsquo;s a detailed breakdown of the differences:</p>
+<h3 id="1-attach">1. Attach</h3>
+<p><code>attach()</code> method is used to add new entries to the pivot table without removing any existing ones. When we want to add a new relationship without altering any existing ones then we can use the <code>attach()</code> method.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">App\Models\User</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$user <span style="color:#f92672">=</span> <span style="color:#a6e22e">User</span><span style="color:#f92672">::</span><span style="color:#a6e22e">find</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">roles</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">attach</span>([<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]);
+</span></span></code></pre></div><p>This will add the roles with IDs 2 and 3 to the user_role pivot table.
+If the user already has roles (e.g., 1), those relationships will remain untouched.</p>
+<h3 id="2-sync">2. Sync</h3>
+<p><code>sync()</code> method in laravel synchronizes the pivot table by adding the specified relationships and removing any that are not in the list. It overwrites the existing relationships in the pivot table. This is used when we want to replace the current relationships with a new set of data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$user <span style="color:#f92672">=</span> <span style="color:#a6e22e">User</span><span style="color:#f92672">::</span><span style="color:#a6e22e">find</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>$user<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">roles</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">sync</span>([<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]);
+</span></span></code></pre></div><p>This will ensure that the user has only the roles with IDs 2 and 3.
+If the user previously had roles (e.g., 1), that relationship will be removed.</p>
+<h3 id="conclusion">Conclusion:</h3>
+<p>Use attach to add relationships incrementally.
+Use sync to replace the current relationships with a new set, ensuring no outdated relationships remain.</p>
 </section>
 
-
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0">How to use Spatie Laravel View Models with Inertia JS and Vue 3</h2>
-  <time class="text-xs antialiased opacity-60"
-    >Jul 28, 2024</time
-  >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/how-to-use-spatie-laravel-view-models-with-inertia-js-and-vue3/">How to use Spatie Laravel View Models with Inertia JS and Vue 3</a>
-</section>
-
-
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0">Sometimes we overcomplicate things</h2>
-  <time class="text-xs antialiased opacity-60"
-    >Jun 1, 2024</time
-  >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/sometime-we-overcomplicate-things/">Sometimes we overcomplicate things</a>
-</section>
 
-
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0">Mastering Vue3: A Step-by-Step Guide to Using vue-router for Page Redirection</h2>
-  <time class="text-xs antialiased opacity-60"
-    >Feb 25, 2023</time
-  >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/mastering-vue3-a-step-by-step-guide-to-using-vue-router-for-page-redirection/">Mastering Vue3: A Step-by-Step Guide to Using vue-router for Page Redirection</a>
-</section>
-
-
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0">How to use Vue 3 template refs</h2>
-  <time class="text-xs antialiased opacity-60"
-    >Aug 21, 2022</time
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/how-to-use-vue-3-template-refs/">How to use Vue 3 template refs</a>
-</section>
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/posts/how-to-use-spatie-laravel-view-models-with-inertia-js-and-vue3/"
+      ><span>How to use Spatie Laravel View Models with Inertia JS and Vue 3</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
 
 
-
-
+  
+  <div class="giscus mt-24"></div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="YOUR_GISCUS_REPO"
+    data-repo-id="YOUR_GISCUS_REPO_ID"
+    data-category="YOUR__GISCUS_CATEGORY"
+    data-category-id="YOUR_GISCUS_CATEGORY_ID"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="0"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+  ></script>
+  
+</article>
 
 
     </main>
