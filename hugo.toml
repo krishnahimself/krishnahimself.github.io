@@ -2,6 +2,7 @@ baseURL = 'https://krishna-bhandari.com.np/'
 languageCode = 'en-us'
 title = 'Krishna Bhandari'
 theme = 'paper'
+googleAnalytics = "G-29GSFNCWRD"
 
 [params]
   # color style
