@@ -42,10 +42,10 @@ googleAnalytics = "G-29GSFNCWRD"
 
   # giscus
 [params.giscus]
-  repo = 'YOUR_GISCUS_REPO'                 # see https://giscus.app for more details
-  repoId = 'YOUR_GISCUS_REPO_ID'
-  category = 'YOUR__GISCUS_CATEGORY'
-  categoryId = 'YOUR_GISCUS_CATEGORY_ID'
+  repo = 'krishnahimself/krishnahimself.github.io'                 # see https://giscus.app for more details
+  repoId = 'R_kgDOLbEWlA'
+  category = 'General'
+  categoryId = 'DIC_kwDOLbEWlM4Cl7Md'
   mapping = 'pathname'
   theme = 'light'
-  lang = 'zh-CN'
+  lang = 'en'
