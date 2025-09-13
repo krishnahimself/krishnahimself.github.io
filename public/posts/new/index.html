@@ -1,0 +1,519 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Mastering Toast Alerts in Inertia.js with Vue 3: From Basics to Reusability - Krishna Bhandari</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="In modern web development, providing seamless user feedback is crucial for a great user experience. Inertia.js bridges the gap between Laravel (or other backends) and frontend frameworks like Vue 3, allowing you to build single-page applications without the complexity of traditional SPAs. One common feature is displaying toast notifications those subtle, non-intrusive alerts that pop up to inform users of success, errors, or other events.
+In this blog post, we&rsquo;ll explore different ways to implement toast alerts using Inertia.js and Vue 3, with examples leveraging the popular vue3-toastify library for toasts. We&rsquo;ll start with the basics and progress to more advanced techniques, including handling authorization errors and extracting logic into reusable composables. By the end, you&rsquo;ll have a step-by-step guide to making your alerts efficient and maintainable." />
+  <meta name="author" content="Krishna Bhandari" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://krishna-bhandari.com.np/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://krishna-bhandari.com.np/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/19906424?v=4" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://krishna-bhandari.com.np/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://krishna-bhandari.com.np/github.svg" />
+  
+  <link rel="preload" as="image" href="https://krishna-bhandari.com.np/instagram.svg" />
+  
+  <link rel="preload" as="image" href="https://krishna-bhandari.com.np/linkedin.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://krishna-bhandari.com.np/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="https://krishna-bhandari.com.np/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://krishna-bhandari.com.np/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.146.1">
+
+  
+  
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-29GSFNCWRD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-29GSFNCWRD');
+</script>
+  
+  
+  <meta itemprop="name" content="Mastering Toast Alerts in Inertia.js with Vue 3: From Basics to Reusability">
+  <meta itemprop="description" content="Mastering Toast Alerts in Inertia.js with Vue 3: From Basics to Reusability">
+  <meta itemprop="datePublished" content="2025-09-13T17:21:27+05:45">
+  <meta itemprop="dateModified" content="2025-09-13T17:21:27+05:45">
+  <meta itemprop="wordCount" content="731">
+  
+  <meta property="og:url" content="https://krishna-bhandari.com.np/posts/new/">
+  <meta property="og:site_name" content="Krishna Bhandari">
+  <meta property="og:title" content="Mastering Toast Alerts in Inertia.js with Vue 3: From Basics to Reusability">
+  <meta property="og:description" content="Mastering Toast Alerts in Inertia.js with Vue 3: From Basics to Reusability">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-09-13T17:21:27+05:45">
+    <meta property="article:modified_time" content="2025-09-13T17:21:27+05:45">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mastering Toast Alerts in Inertia.js with Vue 3: From Basics to Reusability">
+  <meta name="twitter:description" content="Mastering Toast Alerts in Inertia.js with Vue 3: From Basics to Reusability">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://krishna-bhandari.com.np/posts/new/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://krishna-bhandari.com.np/"
+      >Krishna Bhandari</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+    >
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/krishna8723"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/krishnahimself"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/YOUR_INSTAGRAM_ID"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/YOUR_LINKEDIN_ID"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Mastering Toast Alerts in Inertia.js with Vue 3: From Basics to Reusability</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Sep 13, 2025</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p>In modern web development, providing seamless user feedback is crucial for a great user experience. Inertia.js bridges the gap between Laravel (or other backends) and frontend frameworks like Vue 3, allowing you to build single-page applications without the complexity of traditional SPAs. One common feature is displaying toast notifications those subtle, non-intrusive alerts that pop up to inform users of success, errors, or other events.</p>
+<p>In this blog post, we&rsquo;ll explore different ways to implement toast alerts using Inertia.js and Vue 3, with examples leveraging the popular <code>vue3-toastify</code> library for toasts. We&rsquo;ll start with the basics and progress to more advanced techniques, including handling authorization errors and extracting logic into reusable composables. By the end, you&rsquo;ll have a step-by-step guide to making your alerts efficient and maintainable.</p>
+<h4 id="1-the-basic-approach-using-onsuccess-callbacks">1. The Basic Approach: Using onSuccess Callbacks</h4>
+<p>The simplest way to trigger a toast alert is directly in response to form submissions or API calls via Inertia&rsquo;s <code>useForm</code> helper. Inertia allows you to handle server responses with callbacks like <code>onSuccess</code>, where you can check for flash messages passed from the backend.
+Flash messages in Laravel are temporary session data (e.g., <code>return redirect()-&gt;route('venues.index')-&gt;with('success', 'Action completed!')</code>) that Inertia makes available in Vue via <code>page.props.flash</code>.
+Here&rsquo;s an example in a Vue component for submitting a form:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">setup</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useForm</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@inertiajs/vue3&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">toast</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue3-toastify&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">form</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useForm</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">submit</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">form</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;/your-route&#39;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">onSuccess</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">page</span>) =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">flash</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">success</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">toast</span>.<span style="color:#a6e22e">success</span>(<span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">flash</span>.<span style="color:#a6e22e">success</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">flash</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">toast</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">flash</span>.<span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>In this setup:</p>
+<ul>
+<li>On successful form submission, the backend flashes a message.</li>
+<li>The onSuccess callback accesses the updated page props and triggers the appropriate toast.</li>
+<li>This is ideal for actions like creating or updating records, where feedback is tied to a specific user interaction.</li>
+</ul>
+<p>Pros: Straightforward and event-specific.</p>
+<p>Cons: Limited to form submissions; doesn&rsquo;t handle page-load scenarios automatically.</p>
+<h4 id="2-handling-authorization-errors-gracefully">2. Handling Authorization Errors Gracefully</h4>
+<p>Out-of-the-box, Laravel&rsquo;s authorization (via Gates or Policies) might throw a 403 error, leading to a generic &ldquo;Unauthorized&rdquo; page. Instead, you can customize this to redirect users with a flash message, which can then be displayed as a toast.</p>
+<p>On the Laravel side, in your controller, use <code>Gate::allows</code> to check permissions and flash an error if denied:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Support\Facades\Gate</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// In your controller method, e.g., update()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Gate</span><span style="color:#f92672">::</span><span style="color:#a6e22e">allows</span>(<span style="color:#e6db74">&#39;update&#39;</span>, $venue)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">redirect</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">route</span>(<span style="color:#e6db74">&#39;venues.index&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">with</span>(<span style="color:#e6db74">&#39;error&#39;</span>, <span style="color:#e6db74">&#39;You are not authorized to update this venue.&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="3-displaying-flash-messages-on-page-load">3. Displaying Flash Messages on Page Load</h4>
+<p>Authorization checks like <code>Gate::allows</code> in controllers often happen before rendering the page, so flash messages might already be present in <code>page.props</code> on initial load. However, they won&rsquo;t automatically show as toasts, you need to handle this in your Vue component.</p>
+<p>Use Vue&rsquo;s <code>onMounted</code> lifecycle hook to check for flash messages when the component mounts:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">setup</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">usePage</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@inertiajs/vue3&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">onMounted</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">toast</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue3-toastify&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">page</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">usePage</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">onMounted</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">flash</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">success</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">toast</span>.<span style="color:#a6e22e">success</span>(<span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">flash</span>.<span style="color:#a6e22e">success</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">flash</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">toast</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">flash</span>.<span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>This is perfect for scenarios like:</p>
+<ul>
+<li>Redirects after authorization failures (as in Section 2).</li>
+<li>Flash messages set during server-side rendering or redirects.</li>
+</ul>
+<p>Place this in components like your edit page (e.g., <code>Edit.vue</code>) to ensure alerts appear immediately on load.</p>
+<p>Pros: Handles non-interactive scenarios like redirects.</p>
+<p>Cons: If you have many pages, you&rsquo;ll end up duplicating this code, violating DRY (Don&rsquo;t Repeat Yourself) principles.</p>
+<h4 id="4-extracting-logic-into-a-reusable-composable">4. Extracting Logic into a Reusable Composable</h4>
+<p>To avoid code duplication across multiple pages, extract the flash message handling into a Vue composable. Composables are functions that encapsulate and reuse stateful logic in Vue 3.</p>
+<p>Create a new file, e.g., <code>composables/useFlashMessages.js:</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">usePage</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@inertiajs/vue3&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">onMounted</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">toast</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue3-toastify&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">useFlashMessages</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">page</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">usePage</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">onMounted</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">flash</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">success</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">toast</span>.<span style="color:#a6e22e">success</span>(<span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">flash</span>.<span style="color:#a6e22e">success</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">flash</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">toast</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">flash</span>.<span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now, import and use it in any component:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">setup</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useFlashMessages</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/composables/useFlashMessages&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">useFlashMessages</span>();
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>This makes your codebase cleaner, easier to maintain, and scalable for larger apps.</p>
+<h4 id="conclusion">Conclusion</h4>
+<p>Toast alerts in Inertia.js with Vue 3 can range from simple callback-based implementations to sophisticated, reusable composables. Start with basics for quick wins, handle edge cases like authorization with flash redirects, and always refactor for reusability to keep your code DRY.</p>
+<p>If you have questions or variations, drop a comment below! Happy coding! 🚀</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://krishna-bhandari.com.np/posts/what-is-the-difference-between-sync-and-attach-in-laravel/"
+      ><span>What is the difference between attach and sync in laravel</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <div class="giscus mt-24"></div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="krishnahimself/krishnahimself.github.io"
+    data-repo-id="R_kgDOLbEWlA"
+    data-category="General"
+    data-category-id="DIC_kwDOLbEWlM4Cl7Md"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="0"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+  ></script>
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    &copy; 2025
+    <a class="link" href="https://krishna-bhandari.com.np/">Krishna Bhandari</a>
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>

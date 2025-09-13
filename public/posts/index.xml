@@ -2,45 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Krishna Bhandari</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://krishna-bhandari.com.np/posts/</link>
     <description>Recent content in Posts on Krishna Bhandari</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Jan 2025 17:21:27 +0545</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Sep 2025 17:21:27 +0545</lastBuildDate>
+    <atom:link href="https://krishna-bhandari.com.np/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastering Toast Alerts in Inertia.js with Vue 3: From Basics to Reusability</title>
+      <link>https://krishna-bhandari.com.np/posts/new/</link>
+      <pubDate>Sat, 13 Sep 2025 17:21:27 +0545</pubDate>
+      <guid>https://krishna-bhandari.com.np/posts/new/</guid>
+      <description>&lt;p&gt;In modern web development, providing seamless user feedback is crucial for a great user experience. Inertia.js bridges the gap between Laravel (or other backends) and frontend frameworks like Vue 3, allowing you to build single-page applications without the complexity of traditional SPAs. One common feature is displaying toast notifications those subtle, non-intrusive alerts that pop up to inform users of success, errors, or other events.&lt;/p&gt;&#xA;&lt;p&gt;In this blog post, we&amp;rsquo;ll explore different ways to implement toast alerts using Inertia.js and Vue 3, with examples leveraging the popular &lt;code&gt;vue3-toastify&lt;/code&gt; library for toasts. We&amp;rsquo;ll start with the basics and progress to more advanced techniques, including handling authorization errors and extracting logic into reusable composables. By the end, you&amp;rsquo;ll have a step-by-step guide to making your alerts efficient and maintainable.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>What is the difference between attach and sync in laravel</title>
-      <link>http://localhost:1313/posts/what-is-the-difference-between-sync-and-attach-in-laravel/</link>
+      <link>https://krishna-bhandari.com.np/posts/what-is-the-difference-between-sync-and-attach-in-laravel/</link>
       <pubDate>Sun, 05 Jan 2025 17:21:27 +0545</pubDate>
-      <guid>http://localhost:1313/posts/what-is-the-difference-between-sync-and-attach-in-laravel/</guid>
+      <guid>https://krishna-bhandari.com.np/posts/what-is-the-difference-between-sync-and-attach-in-laravel/</guid>
       <description>&lt;p&gt;In Laravel, attach and sync are methods used for managing many-to-many relationships between models. While both are used to associate records in a pivot table, they serve different purposes. Here&amp;rsquo;s a detailed breakdown of the differences:&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-attach&#34;&gt;1. Attach&lt;/h3&gt;&#xA;&lt;p&gt;&lt;code&gt;attach()&lt;/code&gt; method is used to add new entries to the pivot table without removing any existing ones. When we want to add a new relationship without altering any existing ones then we can use the &lt;code&gt;attach()&lt;/code&gt; method.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to use Spatie Laravel View Models with Inertia JS and Vue 3</title>
-      <link>http://localhost:1313/posts/how-to-use-spatie-laravel-view-models-with-inertia-js-and-vue3/</link>
+      <link>https://krishna-bhandari.com.np/posts/how-to-use-spatie-laravel-view-models-with-inertia-js-and-vue3/</link>
       <pubDate>Sun, 28 Jul 2024 17:21:27 +0545</pubDate>
-      <guid>http://localhost:1313/posts/how-to-use-spatie-laravel-view-models-with-inertia-js-and-vue3/</guid>
+      <guid>https://krishna-bhandari.com.np/posts/how-to-use-spatie-laravel-view-models-with-inertia-js-and-vue3/</guid>
       <description>&lt;p&gt;View models are a useful concept for passing data to the view. They help clean up the code and allow us to reuse similar data, usually in our create and update forms.&lt;/p&gt;&#xA;&lt;h3 id=&#34;problem&#34;&gt;Problem:&lt;/h3&gt;&#xA;&lt;p&gt;Recently, I was working on a VILT (Vue, Inertia, Laravel &amp;amp; Tailwind) Stack project where there was a lot of data that needed to be passed to the view for the create form. Almost the same data needed to be passed to the update form as well, which caused duplication and made the controller look messy. To clean things up, I used Spatie Laravel View Models to pass data to the view, and I was using Inertia along with Vue for the frontend.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sometimes we overcomplicate things</title>
-      <link>http://localhost:1313/posts/sometime-we-overcomplicate-things/</link>
+      <link>https://krishna-bhandari.com.np/posts/sometime-we-overcomplicate-things/</link>
       <pubDate>Sat, 01 Jun 2024 17:21:27 +0545</pubDate>
-      <guid>http://localhost:1313/posts/sometime-we-overcomplicate-things/</guid>
+      <guid>https://krishna-bhandari.com.np/posts/sometime-we-overcomplicate-things/</guid>
       <description>&lt;p&gt;How I overthink something and made the complex implementation and later realized that we can handle it in a better and simpler way. I was dealing with the form using Vue 3 and that form needs to be repeated once we click the add new button. First, I thought of creating a parent component called &lt;code&gt;Question&lt;/code&gt; and inside that, it will consist of a &lt;code&gt;QuestionItem&lt;/code&gt; component which we can use to loop for the repeater. Here I am using the concept of props, events, and watchers. Let&amp;rsquo;s see how this will work.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mastering Vue3: A Step-by-Step Guide to Using vue-router for Page Redirection</title>
-      <link>http://localhost:1313/posts/mastering-vue3-a-step-by-step-guide-to-using-vue-router-for-page-redirection/</link>
+      <link>https://krishna-bhandari.com.np/posts/mastering-vue3-a-step-by-step-guide-to-using-vue-router-for-page-redirection/</link>
       <pubDate>Sat, 25 Feb 2023 17:21:27 +0545</pubDate>
-      <guid>http://localhost:1313/posts/mastering-vue3-a-step-by-step-guide-to-using-vue-router-for-page-redirection/</guid>
+      <guid>https://krishna-bhandari.com.np/posts/mastering-vue3-a-step-by-step-guide-to-using-vue-router-for-page-redirection/</guid>
       <description>&lt;p&gt;First of all we need to import the function called &lt;code&gt;useRouter&lt;/code&gt; from the &lt;code&gt;vue-router&lt;/code&gt; plugin&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-vue&#34; data-lang=&#34;vue&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;useRouter&lt;/span&gt;} &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;vue-router&amp;#39;&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;useRouter&lt;/code&gt; function provides us with a convenient way to access the Vue router instance and perform redirects to different pages. Let&amp;rsquo;s assign the result of &lt;code&gt;useRouter&lt;/code&gt; function to the constant called &lt;code&gt;router&lt;/code&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-vue&#34; data-lang=&#34;vue&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;router&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useRouter&lt;/span&gt;();&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, we can use this &lt;code&gt;router&lt;/code&gt; to navigate between pages. Example:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-vue&#34; data-lang=&#34;vue&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;handleSubmit&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; () =&amp;gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;axios&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;post&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/api/appointments/create&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;form&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;) =&amp;gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;router&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;push&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/admin/appointments&amp;#39;&lt;/span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>How to use Vue 3 template refs</title>
-      <link>http://localhost:1313/posts/how-to-use-vue-3-template-refs/</link>
+      <link>https://krishna-bhandari.com.np/posts/how-to-use-vue-3-template-refs/</link>
       <pubDate>Sun, 21 Aug 2022 17:21:27 +0545</pubDate>
-      <guid>http://localhost:1313/posts/how-to-use-vue-3-template-refs/</guid>
+      <guid>https://krishna-bhandari.com.np/posts/how-to-use-vue-3-template-refs/</guid>
       <description>&lt;p&gt;After working with Vue 2 refs and switching to Vue 3 refs can be tricky for the first time as we do not have access to &lt;code&gt;this.$refs&lt;/code&gt; in Vue3&lt;/p&gt;&#xA;&lt;h3 id=&#34;problem&#34;&gt;Problem:&lt;/h3&gt;&#xA;&lt;p&gt;Recently, I was working on Vue 3 project and using VeeValidate for client-side form validation. I was also using the bootstrap modal for the form. Now, I need to reset the form when someone clicks on add/edit button. There is resetForm method available on the VeeValidate Form component so we need to get the form and call resetForm method.&lt;/p&gt;</description>
     </item>
   </channel>
