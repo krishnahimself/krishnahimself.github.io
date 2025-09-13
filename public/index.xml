@@ -16,6 +16,13 @@
       <description>&lt;p&gt;In modern web development, providing seamless user feedback is crucial for a great user experience. Inertia.js bridges the gap between Laravel (or other backends) and frontend frameworks like Vue 3, allowing you to build single-page applications without the complexity of traditional SPAs. One common feature is displaying toast notifications those subtle, non-intrusive alerts that pop up to inform users of success, errors, or other events.&lt;/p&gt;&#xA;&lt;p&gt;In this blog post, we&amp;rsquo;ll explore different ways to implement toast alerts using Inertia.js and Vue 3, with examples leveraging the popular &lt;code&gt;vue3-toastify&lt;/code&gt; library for toasts. We&amp;rsquo;ll start with the basics and progress to more advanced techniques, including handling authorization errors and extracting logic into reusable composables. By the end, you&amp;rsquo;ll have a step-by-step guide to making your alerts efficient and maintainable.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Mastering Toast Alerts in Inertia.js with Vue 3: From Basics to Reusability</title>
+      <link>https://krishna-bhandari.com.np/posts/toast-alerts-inertiajs-vue3-composable/</link>
+      <pubDate>Sat, 13 Sep 2025 17:21:27 +0545</pubDate>
+      <guid>https://krishna-bhandari.com.np/posts/toast-alerts-inertiajs-vue3-composable/</guid>
+      <description>&lt;p&gt;In modern web development, providing seamless user feedback is crucial for a great user experience. Inertia.js bridges the gap between Laravel (or other backends) and frontend frameworks like Vue 3, allowing you to build single-page applications without the complexity of traditional SPAs. One common feature is displaying toast notifications those subtle, non-intrusive alerts that pop up to inform users of success, errors, or other events.&lt;/p&gt;&#xA;&lt;p&gt;In this blog post, we&amp;rsquo;ll explore different ways to implement toast alerts using Inertia.js and Vue 3, with examples leveraging the popular &lt;code&gt;vue3-toastify&lt;/code&gt; library for toasts. We&amp;rsquo;ll start with the basics and progress to more advanced techniques, including handling authorization errors and extracting logic into reusable composables. By the end, you&amp;rsquo;ll have a step-by-step guide to making your alerts efficient and maintainable.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>What is the difference between attach and sync in laravel</title>
       <link>https://krishna-bhandari.com.np/posts/what-is-the-difference-between-sync-and-attach-in-laravel/</link>
       <pubDate>Sun, 05 Jan 2025 17:21:27 +0545</pubDate>
